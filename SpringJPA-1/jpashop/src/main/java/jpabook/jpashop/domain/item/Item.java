@@ -11,7 +11,7 @@ import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)  // 하위 클래스들을 포함하여 하나의 테이블 형태로 생성되는 옵션
-@Getter
+@Getter @Setter
 // 추상 클래스로 생성
 public abstract class Item {
 
