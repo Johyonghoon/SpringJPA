@@ -13,6 +13,8 @@ public class ItemRepository {
 
     private final EntityManager em;
 
+    // 단순한 경우에만 사용할 수 있다.
+    // 일반적인 경우 변경 감지로 명확히 하는 것이 낫다.
     public void save(Item item) {
         if (item.getId() == null) {
             em.persist(item);
