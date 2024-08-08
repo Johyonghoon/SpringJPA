@@ -1,13 +1,13 @@
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost/~/dev/study/SpringJPA-1/jpashop
+    url: jdbc:h2:tcp://localhost/~/dev/study/SpringJPA/jpashop
     username : sa
     password :
     driver-class-name: org.h2.Driver
 
   jpa:
     hibernate:
-      ddl-auto: create  # 자동으로 테이블을 만드는 옵션
+      ddl-auto: none  # none: 변경 없음 / create: 자동으로 테이블을 만드는 옵션
     properties:
       hibernate:
 #        show_sql: true
