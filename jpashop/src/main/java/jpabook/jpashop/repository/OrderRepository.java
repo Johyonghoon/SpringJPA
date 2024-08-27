@@ -4,6 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.*;
 import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.repository.order.simplequery.OrderSimpleQueryDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
@@ -97,6 +98,19 @@ public class OrderRepository {
         return query.getResultList();
     }
 
+
     // [방법 3] 동적 쿼리를 쉽게 해결하는 방법 : QueryDSL
     // QueryDSL 강의가 별도로 존재
+
+
+
+    // fetch join : LAZY를 무시하고 해당 파라미터들을 포함하여 조회한다.
+    public List<Order> findAllWithMemberDelivery() {
+        return em.createQuery(
+                "select o from Order o" +
+                        " join fetch o.member m" +
+                        " join fetch o.delivery d", Order.class
+        ).getResultList();
+    }
+
 }

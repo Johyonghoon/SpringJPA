@@ -13,4 +13,9 @@ public class JpashopApplication {
 		SpringApplication.run(JpashopApplication.class, args);
 	}
 
+	// v1. 엔티티를 반환하는 방법
+//	@Bean
+//	Hibernate5JakartaModule hibernate5Module() {
+//		return new Hibernate5JakartaModule();
+//	}
 }
